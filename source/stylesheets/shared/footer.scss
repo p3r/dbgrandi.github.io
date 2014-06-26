@@ -1,0 +1,22 @@
+footer {
+	color:#999;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 300;
+	border-top: 1px solid #ddd;
+	padding-top:15px;
+	
+	.social {
+		margin-bottom:20px;
+	}
+	
+	img {
+		width:64px;
+		height:64px;
+		padding: 0px 10px 0px 10px;
+	}
+	
+	display: table-row;
+	height: 64px;
+}

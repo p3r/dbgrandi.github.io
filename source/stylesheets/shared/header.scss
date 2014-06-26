@@ -1,0 +1,33 @@
+header {
+  color: rgba(255,255,255,0.40);
+
+  line-height: 24px;
+  width: 100%;
+  text-align: center;
+
+  padding-top:20px;
+  padding-bottom:20px;
+
+  h1 {
+    font-family: AvenirNext, sans-serif;
+    font-weight: 300;
+    font-size: 34px;
+    color: #4A4A4A;
+    line-height: 46px;
+
+    text-transform: uppercase;
+    padding: 25px 0 20px;
+    margin: 0;
+
+    a {
+      color: rgba(0, 0, 0, 1);
+      font-family: AvenirNext-UltraLight, sans-serif;
+      -webkit-transition: color 1s ease;
+    }
+
+    a:hover {
+      color: rgba(50, 50, 50, 1);
+    }
+  }
+}
+

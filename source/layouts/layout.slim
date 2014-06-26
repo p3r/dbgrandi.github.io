@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+	meta charset="utf-8"
+
+	<!-- Always force latest IE rendering engine or request Chrome Frame -->
+	meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+
+	<!-- Use title if it's in the page YAML frontmatter -->
+	title == current_page.data.title || "dbgrandi.github.io"
+
+	== stylesheet_link_tag "all"
+
+	== javascript_include_tag  "all"
+
+	javascript:
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-5291400-3', 'dbgrandi.github.io');
+		ga('send', 'pageview');
+
+    body
+        .wrapper
+            header
+                h1
+                    = link_to "David Grandinetti", "http://dbgrandi.github.io"
+            .container
+                .inner
+                    == yield
+            footer
+                .social
+                    = link_to(image_tag("twitter-120.png", size: "128x128", alt: "David's Twitter Account"), "http://twitter.com/dbgrandi")
+                    = link_to(image_tag("github-120.png", size: "128x128", alt: "David's Github Account"), "http://github.com/dbgrandi")

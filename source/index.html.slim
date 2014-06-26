@@ -1,0 +1,18 @@
+---
+title: dbgrandi.github.io
+pageable: true
+per_page: 5
+---
+
+- page_articles.each do |article|
+	article
+		.date
+		    = article.date.strftime('%b %d, %Y')
+		.title
+		    = link_to article.title, article.url
+
+- if prev_page
+    = link_to "Newer", prev_page.url
+- if next_page
+    = link_to "Older", next_page.url
+
