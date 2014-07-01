@@ -14,7 +14,7 @@ You have to remember that the iOS developer community was a lot less mature than
 
 One of my projects has been moving along since 2009. We've white labeled it a few dozen times with constant updates to fix minor issues or add new features. In all that time, we never committed to doing larger overhauls because (a) it just worked and (b) I was pretty busy with other jobs.
 
-Earlier this year (2013) I decided that it was time to get rid of Three20 and put a bit of effort into the code to bring it up to date.
+In early 2013, I decided that it was time to get rid of Three20 and put a bit of effort into the code to bring it up to date.
 
 ###Why now?
 
