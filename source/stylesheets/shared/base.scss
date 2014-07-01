@@ -11,19 +11,10 @@ html {
 body {
   height:100%;
   font-family: 'AvenirNext', 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
+  font-weight:300;
   text-rendering:optimizeLegibility;
   background: #FFF;
 //  background: #F4F4F4;
-}
-
-a {
-  color: rgba(15, 10, 0, 1.0);
-  text-decoration: none;
-  padding: 1px 1px 0px;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 .wrapper {
@@ -58,4 +49,57 @@ a:hover {
     margin: 0px auto 0px auto;
     width: 320px !important;
   }
+}
+
+a {
+  color: rgba(60, 60, 90, 1.0);
+  padding: 1px 1px 0px;
+}
+
+a:hover {
+}
+
+h1 {
+//  font-family: AvenirNext, sans-serif;
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 46px;
+}
+
+h2 {
+//  font-family: AvenirNext, sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+//  font-family: AvenirNext, sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+.date {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+code {
+  background: rgb(230,230,230);
+  padding: 0px 4px 2px 4px;
+  border-radius: 2px;
+  border-color: rgb(200,200,200);
+  border-width:1px;
+  border-style:solid;
+}
+
+ol {
+  margin-bottom: 20px;
+}
+
+li {
+  list-style-type:circle;
+  font-weight: 300;
+  font-size: 20px;
 }

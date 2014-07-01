@@ -1,5 +1,7 @@
 - wrap_layout :layout do
     h1
       = current_article.title
+    h4.date
+      = current_article.date.strftime('%b %d, %Y')
     article
         == yield
