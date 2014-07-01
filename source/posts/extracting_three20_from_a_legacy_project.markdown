@@ -4,9 +4,9 @@ date: 2014/2/3
 published: true
 ---
 
-Back in 2009, [JoeHewitt](https://twitter.com/joehewitt) announced the [Three20](http://joehewitt.com/2009/03/23/the-three20-project) project. It was factored out of the Facebook app as a set of UI Components and utility classes. It contained the common tools that would get you 80% there and had enough sample/demo code to make even that 80% mostly a matter of cutting and pasting.
+Back in 2009, [Joe Hewitt](https://twitter.com/joehewitt) announced the [Three20](http://joehewitt.com/2009/03/23/the-three20-project) project. It was factored out of the Facebook app as a set of UI Components and utility classes. It contained the common tools that would get you 80% there and had enough sample/demo code to make even that 80% mostly a matter of cutting and pasting.
 
-Nowadays, my feelings for Three20 are mixed. Yes, it was a major part of my earliest experiences with iOS programming and it helped me get going quickly. Yes, it had a great community with lots of people actively using it. Unfortunately, it wasn't just a thin wrapper on top of the iOS APIs. It was a framwork that had it's own abstractions and patterns...making it harder for me to learn how the iOS APIs actually worked.
+Nowadays, my feelings for Three20 are mixed. Yes, it was a major part of my earliest experiences with iOS programming and it helped me get going quickly. Yes, it had a great community with lots of people actively using it. Unfortunately, it wasn't just a thin wrapper on top of the iOS APIs. It was a framework that had it's own abstractions and patterns...making it harder for me to learn how the iOS APIs actually worked.
 
 You have to remember that the iOS developer community was a lot less mature than it is now. We didn't have the rich set of libraries that are now available by just adding an entry to your `Pods` file. While some developers came to this from an OS X background, many others were coming from making web apps. To find a library like Three20, that had patterns to solve most of the "hard" problems of making an app was, well, invaluable.
 
