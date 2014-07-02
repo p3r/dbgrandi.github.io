@@ -14,11 +14,7 @@ You have to remember that the iOS developer community was a lot less mature than
 
 One of my projects has been moving along since 2009. We've white labeled it a few dozen times with constant updates to fix minor issues or add new features. In all that time, we never committed to doing larger overhauls because (a) it just worked and (b) I was pretty busy with other jobs.
 
-In early 2013, I decided that it was time to get rid of Three20 and put a bit of effort into the code to bring it up to date.
-
-###Why now?
-
-Three20 had changed from the thing that helped us release a build quickly to the thing that was holding us back. The iOS/Obj-C community had come so far in the meantime that we had great  libraries to use, and I had also grown quite a bit as a developer. We now had blocks, `UIAppearance`, [AFNetworking](http://afnetworking.com), [CocoaPods](http://cocoapods.org), and new versions of both iOS and Xcode.
+In early 2013, I decided that it was time to get rid of Three20 and put a bit of effort into the code to bring it up to date. Three20 had changed from the thing that helped us release a build quickly to the thing that was holding us back. The iOS/Obj-C community had come so far in the meantime that we had great  libraries to use, and I had also grown quite a bit as a developer. We now had blocks, `UIAppearance`, [AFNetworking](http://afnetworking.com), [CocoaPods](http://cocoapods.org), and new versions of both iOS and Xcode.
 
 There was also the fact that Three20 was quite the behemoth. It encompassed several inter-related subprojects and included some python scripts to integrate it with your Xcode project. This was bringing in **hundreds** of files that I didn't need or want. It was built in the age of iOS 2 and 3, and we were now targeting iOS 5 and later. It also had a few __quirks__ that were deal breakers...the worst being a bug that only happened if I used CLANG, causing me to pin the build to use GCC.
 

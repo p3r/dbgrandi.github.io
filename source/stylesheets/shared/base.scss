@@ -39,7 +39,7 @@ body {
 
 @media screen and (min-width: 501px) and (max-width: 719px) {
   .inner {
-    margin: 0px auto 0px auto;
+    margin: 0px 10px 0px auto;
     width: 480px !important;
   }
 }
@@ -81,6 +81,7 @@ h4 {
 }
 
 .date {
+  font-family: AvenirNext, sans-serif;
   margin-top:20px;
   margin-bottom:20px;
 }
