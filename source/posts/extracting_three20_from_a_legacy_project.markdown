@@ -1,6 +1,6 @@
 ---
 title: Extracting Three20 From a Legacy Project
-date: 2014/2/3
+date: 2014/7/1
 published: true
 ---
 
