@@ -1,7 +1,7 @@
 ---
 title: A Simple Scroll Counter
 date: 2014/7/3
-published: false
+published: true
 ---
 
 I am not a designer. Nobody has ever confused me with one or accused me of being one. However, I like good design, and have come a long way in appreciating all that goes into it. I'm at the point where I can look at something and not only understand that I like it, but also (some of) why I like it.
@@ -28,5 +28,5 @@ If you have not tried [PaintCode](http://www.paintcodeapp.com), you really shoul
 
 Here's what it looks like in [Reveal](http://revealapp.com), which is another app that I probably couldn't live without. This shows the strips of numbers for easier understanding. There is a small `CALayer` on the top and bottom of each digit with an alpha gradient. This allow the numbers to fade away as they animate. I played around with [the animation](https://github.com/dbgrandi/ScrollCounterExample/blob/master/ScrollCounterExample/DBGDigitView.m#L83-109), but the simple ease out curve felt right.
 
-There's not much to it, so I'm gonna stop writing now. Go take a look.
+There's not much to it, so I'm gonna stop writing now. Go [take a look](https://github.com/dbgrandi/ScrollCounterExample).
  
