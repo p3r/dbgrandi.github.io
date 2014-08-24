@@ -28,3 +28,15 @@ a.remove(2)
 println(a) // "[1,3,4]"
 ~~~
 
+Update from [@orta](https://twitter.com/orta): The other part of this that can be tricky is making sure your objects are properly equatable.
+
+~~~swift
+class TinkerObject {
+  // your class impl...
+}
+
+// note that this is OUTSIDE of your class impl to make it global
+public func ==(lhs: TinkerObject, rhs: TinkerObject) -> Bool {
+  return lhs.id == rhs.id
+}
+~~~
