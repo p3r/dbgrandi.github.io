@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="width=device-width" name="viewport" /><!-- Always force latest IE rendering engine or request Chrome Frame --><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!-- Use title if it's in the page YAML frontmatter --><title>Extracting Three20 From a Legacy Project</title><link href="../stylesheets/all-6265b695.css" media="screen" rel="stylesheet" type="text/css" /><script src="../javascripts/all-da39a3ee.js" type="text/javascript"></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5291400-3', 'dbgrandi.github.io');
+ga('send', 'pageview');</script><body><div class="wrapper"><header><h1><a href="http://dbgrandi.github.io">David Grandinetti</a></h1></header><div class="container"><div class="inner"><h1>Extracting Three20 From a Legacy Project</h1><h4 class="date">Jul 01, 2014</h4><article><p>Back in 2009, <a href="https://twitter.com/joehewitt">Joe Hewitt</a> announced the <a href="http://joehewitt.com/2009/03/23/the-three20-project">Three20</a> project. It was factored out of the Facebook app as a set of UI Components and utility classes. It contained the common tools that would get you 80% there and had enough sample/demo code to make even that 80% mostly a matter of cutting and pasting.</p>
+
+<p>Nowadays, my feelings for Three20 are mixed. Yes, it was a major part of my earliest experiences with iOS programming and it helped me get going quickly. Yes, it had a great community with lots of people actively using it. Unfortunately, it wasn't just a thin wrapper on top of the iOS APIs. It was a framework that had it's own abstractions and patterns…making it harder for me to learn how the iOS APIs actually worked.</p>
+
+<p>You have to remember that the iOS developer community was a lot less mature than it is now. We didn't have the rich set of libraries that are now available by just adding an entry to your <code>Pods</code> file. While some developers came to this from an OS X background, many others were coming from making web apps. To find a library like Three20, that had patterns to solve most of the "hard" problems of making an app was, well, invaluable.</p>
+
+<h2 id="three20-must-go">Three20 must go</h2>
+
+<p>One of my projects has been moving along since 2009. We've white labeled it a few dozen times with constant updates to fix minor issues or add new features. In all that time, we never committed to doing larger overhauls because (a) it just worked and (b) I was pretty busy with other jobs.</p>
+
+<p>In early 2013, I decided that it was time to get rid of Three20 and put a bit of effort into the code to bring it up to date. Three20 had changed from the thing that helped us release a build quickly to the thing that was holding us back. The iOS/Obj-C community had come so far in the meantime that we had great  libraries to use, and I had also grown quite a bit as a developer. We now had blocks, <code>UIAppearance</code>, <a href="http://afnetworking.com">AFNetworking</a>, <a href="http://cocoapods.org">CocoaPods</a>, and new versions of both iOS and Xcode.</p>
+
+<p>There was also the fact that Three20 was quite the behemoth. It encompassed several inter-related subprojects and included some python scripts to integrate it with your Xcode project. This was bringing in <strong>hundreds</strong> of files that I didn't need or want. It was built in the age of iOS 2 and 3, and we were now targeting iOS 5 and later. It also had a few <strong>quirks</strong> that were deal breakers…the worst being a bug that only happened if I used CLANG, causing me to pin the build to use GCC.</p>
+
+<h2 id="general-steps">General Steps</h2>
+
+<p>I wrote this months after doing the actual refactoring, but recently heard some other developers talking about how to get rid of Three20, so figured this may be helpful to at least a few other people.</p>
+
+<p><strong>NOTE: This is not a guide. These are just the steps I took. Your code is unique, like a snowflake.</strong></p>
+
+<h3 id="step-1-get-rid-of-tturlnavigation">Step 1: get rid of <code>TTURLNavigation</code></h3>
+
+<p><code>TTURLNavigation</code> was used to create and show view controllers using URLs. So, to show the list of photo galleries I'd navigate to <code>tt://photos</code>, or <code>tt://photos/1</code> if I wanted to view a specific gallery. I was a noob who was used to web apps, so this was comforting.</p>
+
+<p><code>TTURLNavigation</code> had it's hands all over our code, but it was a good place to start because it didn't involve replacing Three20 with another library, just writing a bit of custom code and a shim.</p>
+
+<p>We had two different ways in which we used URL navigation within the app.</p>
+
+<ol>
+  <li>Internal navigation between view controllers</li>
+  <li>Runtime configuration of a tab bar that used URLs to config what happened for each tab</li>
+</ol>
+
+<p>Internal navigation was pretty easy, I just did a global search for something like "tt://teams" and manually created a <code>TeamsViewController</code> then presented it.</p>
+
+<p>For the <code>UITabBarController</code>, I just used an <code>if</code> statement to build the tab bar controller based on an array of URLs. Yes, this is not very sexy. I refactored this again after Three20 was fully gone. Here's what that looked like.</p>
+
+<pre><code class="highlight objective_c"><span class="n">NSArray</span> <span class="o">*</span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nf">loadTabBarUrlsFromConfigFile</span><span class="p">];</span>
+<span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">viewControllers</span> <span class="o">=</span> <span class="p">[</span><span class="err">@</span><span class="p">[]</span> <span class="nf">mutableCopy</span><span class="p">];</span>
+
+<span class="k">for</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">url</span> <span class="k">in</span> <span class="n">urls</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">([</span><span class="n">URL</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="s">@"tt://teams"</span><span class="p">])</span> <span class="p">{</span>
+	   <span class="p">[</span><span class="n">viewControllers</span> <span class="nf">addObject</span><span class="p">:[[</span><span class="n">TeamsViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">]];</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">URL</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="s">@"tt://photos"</span><span class="p">])</span> <span class="p">{</span>
+	   <span class="p">[</span><span class="n">viewControllers</span> <span class="nf">addObject</span><span class="p">:[[</span><span class="n">PhotoGalleriesController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">]];</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">URL</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="s">@"tt://links"</span><span class="p">])</span> <span class="p">{</span>
+	   <span class="p">[</span><span class="n">viewControllers</span> <span class="nf">addObject</span><span class="p">:[[</span><span class="n">LinksViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">]];</span>
+   <span class="p">}</span>
+   <span class="c1">//
+</span>   <span class="c1">//.. more controllers
+</span>   <span class="c1">//
+</span>   <span class="k">else</span> <span class="p">{</span>
+	   <span class="p">[</span><span class="n">NSException</span> <span class="nf">raise</span><span class="p">:</span><span class="s">@"Invalid TabController URL"</span> <span class="nf">format</span><span class="p">:</span><span class="s">@"URL %@ is invalid"</span><span class="p">,</span> <span class="n">URL</span><span class="p">];</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">tabBarController</span><span class="p">.</span><span class="n">viewControllers</span> <span class="o">=</span> <span class="n">viewControllers</span><span class="p">;</span>
+</code></pre>
+
+<h3 id="step-2-change-all-non-table-controllers-to-use-a-plain-uiviewcontroller">Step 2: Change all non-table controllers to use a plain UIViewController</h3>
+
+<p>Some of our controllers were extended from a <code>TTBaseViewController</code> to take advantage of who knows what. Other controllers had <code>#import "Three20/Three20.h"</code> even though they never used any actual functionality. Chalk this up to my inexperience or possibly being drunk at the time.</p>
+
+<h3 id="step-3-look-for-tables-that-use-three20-data-sources">Step 3: Look for tables that use Three20 Data Sources</h3>
+
+<p>This was the single largest step. At this point I created a Storyboard and merged a few XIB files into it for custom cells. This also allowed me to use prototype cells for the simple stuff.</p>
+
+<p>Start with the easy…tables with static data. This was just a matter of merging in the code from the Three20 data source into the table view.</p>
+
+<p>For the tables that pulled in data from an external API, I refactored to use AFNetworking and blocks. For the table cells that used the Three20 remote image loading, use the <code>UIImageView+AFNetworking.h</code> category that comes with AFNetworking.</p>
+
+<p>We also had a few table views that used pull to refresh. We were targetting iOS5 and up at the time, so I could not use a <code>UIRefreshControl</code>. Instead, I used the wonderful <a href="https://github.com/samvermette/SVPullToRefresh">SVPullToRefresh</a> library by Sam Vermette.</p>
+
+<h3 id="step-4-remove-any-use-of-ttstylesheet-and-ttstylevar-macros">Step 4: Remove any use of <code>TTStyleSheet</code> and <code>TTSTYLEVAR</code> macros</h3>
+
+<p>TTStyle is another one of the things that is deeply embedded into everything Three20, so this is best left to a later stage. I replaced this with a category called <code>UIColor+AppColors</code> so I could easily handle things like setting up my tables using <code>[UIColor tableSeparatorColor]</code>. I also used a Style Controller to setup app wide styles using <code>UIAppearance</code>.</p>
+
+<h3 id="step-5-replace-the-photo-browser">Step 5: replace the photo browser</h3>
+
+<p>I just used <a href="https://github.com/mwaterfall/MWPhotoBrowser">MWPhotoBrowser</a>. It was a matter of about 3 steps that were each quite simple on thier own.</p>
+
+<h3 id="step-6-final-sweep-aka-jump">Step 6: Final Sweep, aka "Jump"</h3>
+
+<p>With no large issues remaining, this was the point where I removed Three20 from the project and spent a bit of time fixing compiler errors until it worked.</p>
+
+<h2 id="what-did-i-end-up-with">What did I end up with?</h2>
+
+<ul>
+  <li>A project that contained several hundred fewer source files.</li>
+  <li>An app that was ~1.5 MB smaller.</li>
+  <li>Code that was easier to read and refactor even more.</li>
+  <li>Code that would now play nice with any number of third party libraries.</li>
+</ul>
+</article></div></div><footer><div class="social"><a href="http://twitter.com/dbgrandi"><img size="128x128" alt="David's Twitter Account" src="../images/twitter-120-58a9508a.png" /></a><a href="http://github.com/dbgrandi"><img size="128x128" alt="David's Github Account" src="../images/github-120-8e4af8e0.png" /></a></div></footer></div></body></head></html>
