@@ -6,7 +6,7 @@ published: true
 
 While the semantics of Swift are still being ironed out, it seems like there is a [bit of discussion](https://devforums.apple.com/message/979026#979026) about what that may look like, specifically when it comes to Arrays.
 
-Here's a simple Array extension to remove instances of a specific item. The type details were inspired by [ExSwift](https://github.com/pNre/ExSwift/blob/master/ExSwift/Array.swift), but I didnt' want to create a new array pNre did.
+Here's a simple Array extension to remove instances of a specific item. The type details were inspired by [ExSwift](https://github.com/pNre/ExSwift/blob/master/ExSwift/Array.swift), but I didnt' want to create a new array like pNre did.
 
 
 ~~~ swift

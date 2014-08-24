@@ -20,4 +20,3 @@ gem "redcarpet"
 gem 'zen-grids'
 
 gem "middleman-blog"
-gem 'middleman-gh-pages'
