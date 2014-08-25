@@ -31,7 +31,7 @@ println(a) // "[1,3,4]"
 Update from [@orta](https://twitter.com/orta): The other part of this that can be tricky is making sure your objects are properly equatable.
 
 ~~~swift
-class TinkerObject {
+class TinkerObject : Equatable {
   // your class impl...
 }
 
