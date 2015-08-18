@@ -8,7 +8,7 @@ The other day, I found myself in a conversation about what made a person a great
 
 So, over the next few days I asked those around me, *”What makes a good programmer?”*
 
-Answers often started out short: **”Patience”**, **”Perseverance”**, **”Creativity”**. While these are good answers, they are also traits that could be useful in all kinds of endeavors...parenting, for example.
+Answers often started out short: **”patience”**, **”perseverance”**, **”creativity”**. While these are good answers, they are traits that could be useful in all kinds of endeavors (e.g. parenting.)
 
 The more interesting answers started to come when I followed up with, *”What's the difference between a good programmer and great programmer?”*
 
@@ -38,7 +38,7 @@ When you spend the time to find or create the right metaphor for something you a
 
 Years ago, [Metaphors We Live By](http://www.amazon.com/Metaphors-We-Live-George-Lakoff/dp/0226468011) was recommended to me by [Venkatesh Rao](http://ribbonfarm.com). If you want more insight into how we use metaphors to share concepts with others (which is pretty important in programming) and how metaphor affects both our thinking and our language...I highly recommend reading this. In fact, I’ll be re-reading it soon.
 
-One thing that I’ve found is the problems that arise when somebody uses a metaphor that is **almost** appropriate for what they are building. If you have a class or variable that is essentially a `Foo` except for two common edge cases where it behaves like a `Bar` you will inevitably have somebody who uses it exclusively like a `Foo` and causes problems.
+One problem I’ve seen is when somebody uses a metaphor that is **almost** appropriate for what they are building. If you have a class or variable that is essentially a `Foo` except for two common edge cases where it behaves like a `Bar` you will inevitably have somebody who uses it exclusively like a `Foo` and causes problems.
 
 ### What about the 10x programmer?
 
@@ -48,7 +48,7 @@ I recently came across (where was this!!!) a mention that *“the 10x programmer
 
 My view of the 10x programmer is that it's not about writing 10x more code. We don't get paid to write lines of code any more than a mathematician gets paid to write variables in LateX documents. We both get paid to solve problems. Code is a side effect of solving problems.
 
-Ideally, the 10x developer writes less code...or at least spends their time more efficiently in the code that they write.
+Ideally, the 10x developer writes less code and spends their time more efficiently in choosing what code to write.
 
 We are in a unique position that the tools we use today are the same tools we use to make better tools for tomorrow. If I wanted to build a house by hand, I may get some really nice basic tools. A good framing hammer is top of my list. The trouble is, if I wanted a nail gun to put my roof on faster, I'd have a lot of trouble trying to build one with my hammer and saw. I'd probably end up buying it.
 
