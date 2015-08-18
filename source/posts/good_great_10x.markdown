@@ -1,7 +1,7 @@
 ---
 title: Good, Great, and 10x
-date: 2015/8/17
-published: false
+date: 2015/8/18
+published: true
 ---
 
 The other day, I found myself in a conversation about what made a person a great programmer, and figured this is something I should strive to understand. I’d like to think that I'm a good programmer, and understanding what the path to greatness looks like could help me walk it.
