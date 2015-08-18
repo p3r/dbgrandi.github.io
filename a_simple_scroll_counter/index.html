@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="width=device-width" name="viewport" /><!-- Always force latest IE rendering engine or request Chrome Frame --><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><!-- Use title if it's in the page YAML frontmatter --><title>A Simple Scroll Counter</title><link href="../stylesheets/all-6265b695.css" media="screen" rel="stylesheet" type="text/css" /><script src="../javascripts/all-da39a3ee.js" type="text/javascript"></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-5291400-3', 'dbgrandi.github.io');
+ga('send', 'pageview');</script><body><div class="wrapper"><header><h1><a href="http://dbgrandi.github.io">David Grandinetti</a></h1></header><div class="container"><div class="inner"><h1>A Simple Scroll Counter</h1><h4 class="date">Jul 03, 2014</h4><article><p>I am not a designer. Nobody has ever confused me with one or accused me of being one. However, I like good design, and have come a long way in appreciating all that goes into it. I'm at the point where I can look at something and not only understand that I like it, but also (some of) why I like it.</p>
+
+<p>However, I have not yet made the jump to being able to create those 'lickable' elements that are both beautiful and invite interaction.</p>
+
+<p>Lately, I've been finding small UI elements in websites and apps and trying to re-implement them on my own. It's fun, and it gives me a chance to really look at the details. When you focus on the details of how something works, you start to see all of the little decisions that were made along the way…and you start to appreciate how difficult a skill it is to make something beautiful.</p>
+
+<p>I figured writing about this will help me solidify what I learn, and others may find it useful.</p>
+
+<p>Late last year (2013) I wound up at <a href="https://www.wunderlist.com/en/">Wunderlist</a> and scrolled down their site to see what I thought was a really cool counter that showed how many ToDo items they had at that very second. It pulled those numbers in via a websocket connection that received a message every second or so and updated the UI in a rather interesting way. It looks like that counter is gone now, so I can only show you a bit of my re-creation.</p>
+
+<p><img alt="Screenshot of the iOS simulator" src="https://raw.githubusercontent.com/dbgrandi/ScrollCounterExample/master/screenshot.gif" /></p>
+
+<p>Look at how the numbers sometimes scroll upward and sometimes scroll downward. It's different enough from most physical implementations (e.g. old alarm clocks or gas station pumps) that I was intrigued enough to build it. There were two things that I liked. The scrolling style implied that it was a strip of numbers instead of a disc with numbers on the edge. This is not something that people would build in the physical world. It also has an appropriate use of a decay animation…as if each time the number changed it was flicked by a finger to spin it.</p>
+
+<h3 id="implementing-the-scroller">Implementing the Scroller</h3>
+
+<p>(Note: Code is available <a href="https://github.com/dbgrandi/ScrollCounterExample">here</a>.)</p>
+
+<p>If you have not tried <a href="http://www.paintcodeapp.com">PaintCode</a>, you really should. It's become both a tool for getting real work done as well as a source for learning more about CoreGraphics. It paid for itself the first day I used it.  (Bonus: They also recently added support for generating Swift code, which is ace.) For the scroller, I laid out a quick strip of numbers in PaintCode and then cleaned up the generated code a bit before dropping it into a <a href="https://github.com/dbgrandi/ScrollCounterExample/blob/master/ScrollCounterExample/DBGDigitContentView.m">view class</a>.</p>
+
+<p><img alt="Screenshot of Reveal" src="../images/scroll_reveal-f23d2f5a.png" /></p>
+
+<p>Here's what it looks like in <a href="http://revealapp.com">Reveal</a>, which is another app that I probably couldn't live without. This shows the strips of numbers for easier understanding. There is a small <code>CALayer</code> on the top and bottom of each digit with an alpha gradient. This allow the numbers to fade away as they animate. I played around with <a href="https://github.com/dbgrandi/ScrollCounterExample/blob/master/ScrollCounterExample/DBGDigitView.m#L83-109">the animation</a>, but the simple ease out curve felt right.</p>
+
+<p>There's not much to it, so I'm gonna stop writing now. Go <a href="https://github.com/dbgrandi/ScrollCounterExample">take a look</a>.</p>
+
+</article></div></div><footer><div class="social"><a href="http://twitter.com/dbgrandi"><img size="128x128" alt="David's Twitter Account" src="../images/twitter-120-58a9508a.png" /></a><a href="http://github.com/dbgrandi"><img size="128x128" alt="David's Github Account" src="../images/github-120-8e4af8e0.png" /></a></div></footer></div></body></head></html>
