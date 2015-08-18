@@ -40,6 +40,12 @@ Years ago, [Metaphors We Live By](http://www.amazon.com/Metaphors-We-Live-George
 
 One problem I’ve seen is when somebody uses a metaphor that is **almost** appropriate for what they are building. If you have a class or variable that is essentially a `Foo` except for two common edge cases where it behaves like a `Bar` you will inevitably have somebody who uses it exclusively like a `Foo` and causes problems.
 
+### "If you're not enhancing the field, it's just code."
+
+This comes from the distinction of good, better, and best in the art world. Good artists should be able to look across their history to see a progression of quality. There comes a moment early in every programmers learning when they look back at some code they wrote a week or month ago and gasp at what they thought was acceptable to them back then. This is such a great moment. The good news is that it never goes away. I still look at things I did last year and, while I don't gasp, I can always find things that I'd do more elegantly today.
+
+The best artists will show a mastery of technique, a mastery of subject matter, and an ability to enhance the field in general. "Enhancing the field in general" is one of those phrases that can be interpreted so many ways.
+
 ### What about the 10x programmer?
 
 Many have written supporting or denying the existence of the 10x programmer. I’m squarely in the ‘they do exist’ camp, but perhaps not in the traditional sense.
