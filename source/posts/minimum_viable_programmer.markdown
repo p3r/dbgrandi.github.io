@@ -125,5 +125,5 @@ And if you think that senior developers are immune from the frustrations that yo
 
 The dirty secret of developers is that this happens to everybody. (OMG, please tell me it’s not just me!)
 
-Of course, all this knowledge is about how to builds apps, and the thing I still find the hardest is agreeing on what should be built.
+Of course, all this knowledge is about how to build apps, and the thing I still find the hardest is agreeing on what should be built.
 
