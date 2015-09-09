@@ -1,7 +1,7 @@
 ---
 title: Minimum Viable Programmer
-date: 2015/9/6
-published: false
+date: 2015/9/9
+published: true
 ---
 
 I’ve been working with the [Coalition For Queens](http://www.c4q.nyc) (C4Q) this summer, helping to guide their iOS curriculum. For one meeting, we were asked to describe our requirements for a *Minimum Viable Programmer*. This is what each of us would expect from a junior developer. It turned out to be a fun exercise that brought out interesting views from everybody.
