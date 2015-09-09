@@ -121,7 +121,7 @@ And if you think that senior developers are immune from the frustrations that yo
 - I’ve thought that I understood how I should handle rotation in our app, only to realize I was completely wrong.
 - I’ve sworn that I found a critical-showstopper of a bug, only to have everything work fine when I deleted `DerivedData` and restarted Xcode.
 - I’ve sworn at my computer trying to figure out why Code Signing doesn’t work.
-- I’ve seen what to me what clearly the most simple and stupid error, and then checked the git history to find out that I wrote that code about a month ago.
+- I’ve seen what to me was clearly the most simple and stupid error, and then checked the git history to find out that I wrote that code about a month ago.
 
 The dirty secret of developers is that this happens to everybody. (OMG, please tell me it’s not just me!)
 
