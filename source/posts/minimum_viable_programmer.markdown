@@ -4,11 +4,9 @@ date: 2015/9/6
 published: false
 ---
 
-I’ve been working with the [Coalition For Queens](http://www.c4q.nyc) (C4Q) this summer, helping to guide the curriculum they use to train new iOS developers.
+I’ve been working with the [Coalition For Queens](http://www.c4q.nyc) (C4Q) this summer, helping to guide their iOS curriculum. For one meeting, we were asked to describe our requirements for a *Minimum Viable Programmer*. This is what each of us would expect from a junior developer. It turned out to be a fun exercise that brought out interesting views from everybody.
 
 C4Q teaches mobile development to adults who are underrepresented and underserved in the tech industry. Their goal is to take someone who has never programmed and prepare them for a job as a junior developer. It’s an intense course that meets 6 days a week for 9 months. The application process is competitive because, if accepted, it’s completely free.
-
-We were asked to describe our requirements for a *Minimum Viable Programmer*. These are what each of us  would expect from a junior developer. This turned out to be a fun exercise that brought out strong views from everybody.
 
 I wrote up a lot of notes for that meeting, and figured it would be a nice thing to share with all of you lovely people. It also seems to be a good bookend against my last post about [what makes for a great programmer](http://dbgrandi.github.io/good_great_10x/).
 
@@ -16,13 +14,13 @@ I wrote up a lot of notes for that meeting, and figured it would be a nice thing
 
 ### | You can use simple git commands
 
-Every team I've worked with in the last 5 years has used `git`, with most using Github. 
+Every team I've worked with in the last 5 years has used `git`, with most using GitHub. 
 
 You should be able to add, commit, push, pull, branch, and merge. Knowing how to fork code, create a branch, and send a pull-request are vital to being able to contribute to a team.
 
 ### | You know how to ask good questions
 
-Seriously. When a colleague comes to me with a question, my first response is almost always “What have you tried so far?" or “What did Google
+Seriously. When a colleague comes to me with a question, my first response is almost always *“What have you tried so far?”* or *“What did Google turn up?”*
 
 I often point people to [How To Ask Questions The Smart Way](http://www.catb.org/esr/faqs/smart-questions.html) as a guide to help maximize the odds of getting a useful response to your question. [Orta](https://twitter.com/orta) recommended [How do I ask a good question?](http://stackoverflow.com/help/how-to-ask) as another resource.
 
@@ -36,11 +34,11 @@ This is a double edged sword for the beginner and expert alike. Sometimes, I jus
 
 ## iOS specific skills a developer should have
 
-I had a **long** list of specific things relating to Xcode and iOS. They were very tedious things like, “know how to add a new file to an Xcode project.” I’ve shortened that list to a general description here.
+I had a **long** list of specific things relating to Xcode and iOS. They were very tedious things like, *“you should know how to add a new file to an Xcode project.”* I’ve shortened that list to a general description here.
 
-*I expect you to be able to start a new project, write some classes to download a bit of JSON via HTTP, and use the parsed JSON to present some data in a `UITableView`.*
+I expect you to be able to start a new project, write some code to download a bit of JSON via HTTP, and use the parsed JSON to present some data in a `UITableView`.
 
-If you can do that, and can discuss the choices you made to get your app built, that encapsulates most of what you’ll need to know.
+If you can do that, in a well organized manner, and can discuss the choices you made to get your app built you’ll have been able to do almost everything that was on that long and tedious list.
 
 Two things I’d love you to know that fall outside of that description...
 
@@ -75,11 +73,11 @@ If you read books or blogs, attend meetups or conferences, and watch videos (WWD
 
 Some books that I'd recommend to any new programmer:
 
-- "The Pragmatic Programmer: From Journeyman to Master", by Andrew Hunt and David Thomas
-- "The UNIX Philosophy", by Mike Gancarz
-- "The Mythical Man-Month", by Fred Brooks
-- "The Cathedral and the Bazaar", by Eric S. Raymond
-- "The Design of Everyday Things", by Don Norman
+- [The Pragmatic Programmer: From Journeyman to Master](http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X), by Andrew Hunt and David Thomas
+- [The UNIX Philosophy](http://www.amazon.com/The-UNIX-Philosophy-Mike-Gancarz/dp/1555581234), by Mike Gancarz
+- [The Mythical Man-Month](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959), by Fred Brooks
+- [The Cathedral and the Bazaar](http://www.amazon.com/Cathedral-Bazaar-Musings-Accidental-Revolutionary/dp/0596001088), by Eric S. Raymond
+- [The Design of Everyday Things](http://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654), by Don Norman
 
 ## Things I DO NOT expect a junior developer to know
 
@@ -113,6 +111,19 @@ You may have gone through this once to get an app on the App Store, but I don’
 
 ## We stand on the shoulders of giants
 
-I’m amazed at the volume of things developers know about these days. David Smith recently [measured the number of API elements in iOS](https://david-smith.org/blog/2015/09/03/the-growing-ios-sdk/) and it is just under 13,000. Combine that with understanding  the history of these APIs, the network stack, all the tools we use to support making apps, and it starts to add up.
+I’m amazed at the volume of things developers know about these days. David Smith recently [measured the number of API elements in iOS](https://david-smith.org/blog/2015/09/03/the-growing-ios-sdk/) and it is just under 13,000. Combine that with understanding the history of these APIs, the network stack, all the third party libraries that you are likely to use, all the tools we use to support making apps, and it starts to add up.
 
-All this knowledge is about how to builds apps, and the thing I still find the hardest is agreeing on what should be built.
+If it seems overwhelming, don’t lose hope. The more you learn about iOS the faster you can learn more. You start to see patterns that make it easier to understand a new API.
+
+And if you think that senior developers are immune from the frustrations that you have as a new programmer, here’s a few things that I did this year:
+
+- I’ve spent some number of hours tracking down misplaced semi-colons, commas, braces, or brackets.
+- I’ve thought that I understood how I should handle rotation in our app, only to realize I was completely wrong.
+- I’ve sworn that I found a critical-showstopper of a bug, only to have everything work fine when I deleted `DerivedData` and restarted Xcode.
+- I’ve sworn at my computer trying to figure out why Code Signing doesn’t work.
+- I’ve seen what to me what clearly the most simple and stupid error, and then checked the git history to find out that I wrote that code about a month ago.
+
+The dirty secret of developers is that this happens to everybody. (OMG, please tell me it’s not just me!)
+
+Of course, all this knowledge is about how to builds apps, and the thing I still find the hardest is agreeing on what should be built.
+
