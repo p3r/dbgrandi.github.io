@@ -50,7 +50,7 @@ The best artists will show a mastery of technique, a mastery of subject matter, 
 
 Many have written supporting or denying the existence of the 10x programmer. I’m squarely in the ‘they do exist’ camp, but perhaps not in the traditional sense.
 
-I recently came across (where was this!!!) a mention that *“the 10x programmer is one who makes the 5 closest programmers twice as effective.”*
+> How to be a 10x engineer: help ten other engineers be twice as good. - [Peter Seibel](https://twitter.com/peterseibel/status/512615519934230528)
 
 My view of the 10x programmer is that it's not about writing 10x more code. We don't get paid to write lines of code any more than a mathematician gets paid to write variables in LateX documents. We both get paid to solve problems. Code is a side effect of solving problems.
 
