@@ -73,7 +73,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.build_before = true
-  deploy.branch   = "master"
+  deploy.branch   = "gh-pages"
   deploy.remote   = "git@github.com:dbgrandi/dbgrandi.github.io.git"
 end
 
