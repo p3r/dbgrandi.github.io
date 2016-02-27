@@ -69,4 +69,4 @@ In doing so, you'll work on a project that is bigger than any one person. It wil
 
 This puts you in an environment where you get to practice understanding code, analyzing options, implementing solutions, and getting feedback on your pull requests from other developers. For some people, this may sound scary. It's the kind of thing that can make you feel vulnerable. That's okay. It's something that I still feel when I submit a PR. I've come to accept that having these feelings are often related to the opportunities for growing as a developer.
 
-#### tl;dr - Practice project based programming with passionate peers who play.
+## tl;dr - Practice project based programming with passionate peers who play.
