@@ -30,7 +30,7 @@ Remember when you tried to cram for a final exam by reading a semester's worth o
 
 ## Beyond practice… Projects, Peers, Passion, and Play
 
-The concept of practicing programming is something that we can explore a bit and expand upon. I was talking with [@lazerwalker](https://twitter.com/lazerwalker) recently about this post and he pointed me to a [paper by Mitchel Resnick](http://web.media.mit.edu/~mres/papers/constructionism-2014.pdf) that looks at the design of the [Scratch](https://scratch.mit.edu) through the lens of Four P’s of Creative Learning: Projects, Peers, Passion, and Play.
+The concept of practicing programming is something that we can explore a bit and expand upon. I was talking with [@lazerwalker](https://twitter.com/lazerwalker) recently about this post and he pointed me to a [paper by Mitchel Resnick](http://web.media.mit.edu/~mres/papers/constructionism-2014.pdf) that looks at the design of [Scratch](https://scratch.mit.edu) through the lens of Four P’s of Creative Learning: Projects, Peers, Passion, and Play.
 
 #### Projects
 
