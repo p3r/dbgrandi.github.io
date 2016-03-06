@@ -32,25 +32,25 @@ Remember when you tried to cram for a final exam by reading a semester's worth o
 
 The concept of practicing programming is something that we can explore a bit and expand upon. I was talking with [@lazerwalker](https://twitter.com/lazerwalker) recently about this post and he pointed me to a [paper by Mitchel Resnick](http://web.media.mit.edu/~mres/papers/constructionism-2014.pdf) that looks at the design of [Scratch](https://scratch.mit.edu) through the lens of Four P’s of Creative Learning: Projects, Peers, Passion, and Play.
 
-#### Projects
+### Projects
 
 There's a difference between making hello world, and making an app that you need or want and will use and pushes your boundaries in some way. Having a project with a goal will help you focus on things bigger than a single technical concept.
 
-#### Peers
+### Peers
 
 Working with other people let's you share what you've done, get feedback from them, and learn from that interaction. It gives you the opportunity to build on ideas. This is the foundation of why communities are so powerful.
 
-#### Passion
+### Passion
 
 When you have passion for something, you are more willing to work through the difficult times to get beyond it. Programming certainly offers plenty of difficult moments… and having passion is one of the most common traits I see in people who I consider to be exceptional programmers.
 
-#### Play
+### Play
 
 > We think of play as an attitude and an approach for engaging with the world. We associate play with taking risks, trying new things, and testing boundaries. We see play as a process of tinkering, experimenting, and exploring. These aspects of play are central to the creative learning process. - Mitchel Resnick
 
 Sound familiar? This is essentially what we do every day when we program. This is something that never ends, and senior developers still do this every day. One difference I see between junior and senior developers that seems to make a difference is the *way* in which they play. Senior devs tend to know their tools better and have a different process for how they tinker.
 
-Here's three things I learned that helped me tinker faster.
+Here's three things I learned that helped me play with code faster.
 
 - Learn some keyboard shortcuts for Xcode. When you are tinkering and trying things, the limitation to your speed will eventually become the rate at which you can move around a project and manipulate code. Learn a few of the [most common shortcuts](https://spin.atomicobject.com/2014/03/23/xcode-keyboard-shortcuts/)
 
