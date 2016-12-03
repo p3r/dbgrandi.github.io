@@ -4,8 +4,6 @@ date: 2016/12/3
 published: true
 ---
 
-tl;dr - Apple should build tools that allow users to verify the source to binary transformation of apps so we can know what is on our phones.
-
 A few years ago, somebody sent me a link to the [Debian Reproducable Build project](https://wiki.debian.org/ReproducibleBuilds). The goal was to have a build pipeline that is entirely reproduceable and verifiable. Given a binary and some source code, you should be able to verify that the source code will produce that binary. This means users can know that the binary distribution they use is *exactly* what they think it is.
 
 Why would this be important? We're starting to see more apps operate under an open source model. Some are open to be transparent with the community, because that is a value they embody. Some are open to show that they are secure and protect your privacy, like [Signal](https://github.com/WhisperSystems/Signal-iOS), [Wire](https://github.com/wireapp/wire-ios) or [Mozilla Focus](https://github.com/mozilla-mobile/focus).
